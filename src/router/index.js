@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import BookManage from "../views/BookManage";
 import AddBook from "../views/AddBook";
-
+import SearchBook from "../views/SearchBook";
 
 import Index from "../views/Index";
 import BookUpdate from "../views/BookUpdate";
@@ -26,6 +26,12 @@ const routes = [
         path: '/AddBook',
         name: '添加图书',
         component: AddBook
+      },
+      {
+        path: '/search',
+        name: '搜索',
+        show: true,
+        component: SearchBook
       }
     ]
   },

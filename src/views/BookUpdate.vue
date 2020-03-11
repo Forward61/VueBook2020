@@ -43,7 +43,7 @@
 
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            axios.put('http://localhost:8082/book/update',this.ruleForm).then(function (resp) {
+            axios.put('http://localhost:8080/book/update',this.ruleForm).then(function (resp) {
               if (resp.data == 'success'){
                 // _this.$message('添加成功')
                 // _this.$router.push('/BookManager')
@@ -76,7 +76,7 @@
     },
     created(){
       const  _this = this
-      axios.get('http://localhost:8082/book/findById/'+this.$route.query.bid).then(function (resp) {
+      axios.get('http://localhost:8080/book/findById/'+this.$route.query.bid).then(function (resp) {
         _this.ruleForm = resp.data
         console.log(resp)
       })

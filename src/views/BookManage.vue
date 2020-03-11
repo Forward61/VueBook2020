@@ -48,7 +48,7 @@
     methods: {
       deleteBook(row){
         const  _this = this
-        axios.delete('http://localhost:8082/book/delete/'+row.bid).then(function (resp) {
+        axios.delete('http://localhost:8080/book/delete/'+row.bid).then(function (resp) {
           _this.$alert('《' + row.bookname + '》删除成功！', 'OK',{
             confirmButtonText: '确定',
             callback: action => {
@@ -72,7 +72,7 @@
       },
       changePage(currentPage){
         const _this = this;
-        axios.get('http://localhost:8082/book/findAll/'+(currentPage-1)+'/3').then(function (resp) {
+        axios.get('http://localhost:8080/book/findAll/'+(currentPage-1)+'/3').then(function (resp) {
           _this.tableData = resp.data.content
           _this.pagesize = resp.data.size
           _this.total = resp.data.totalElements
@@ -91,7 +91,7 @@
     },
     created() {
       const _this = this;
-      axios.get('http://localhost:8082/book/findAll/0/3').then(function (resp) {
+      axios.get('http://localhost:8080/book/findAll/0/3').then(function (resp) {
         _this.tableData = resp.data.content
         _this.pagesize = resp.data.size
         _this.total = resp.data.totalElements
